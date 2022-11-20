@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+df=pd.read_csv('mtcars.csv')
+
+#HISTOGRAM
+print("Histogram to check frequency distribution of mpg")
+y= df.mpg
+plt.hist(y,   bins = 5 ,);
+plt.title('histogram')
+plt.show()
+
+#SCATTER PLOT
+print("this is scatter plot for weight and mpg")
+x=df.wt
+y=df.mpg
+plt.xlabel('model')
+plt.ylabel('Mpg')
+plt.scatter(x,y)
+plt.title('scatter plot')
+plt.show()
+
+#LINE GRAPH
+e = df.wt
+u = df.model
+plt.plot(e,u)
+plt.title('line graph')
+plt.savefig('linegraph_Cars2.png')
+plt.show()
+
+#BOX PLOT
+import seaborn as sns
+sns.boxplot(df['hp'])
+plt.title('boxplot')
+pls.savefig('boxplot.png')
+plt.show()
